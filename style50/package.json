@@ -1,0 +1,89 @@
+{
+  "name": "style50",
+  "publisher": "surisurya19",
+  "displayName": "style50",
+  "description": "Format Python and C files using style50",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:style50.formatFile",
+    "onCommand:style50.formatWorkspace"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "style50.formatFile",
+        "title": "Style50: Format Current File"
+      },
+      {
+        "command": "style50.formatWorkspace",
+        "title": "Style50: Format All Files in Workspace"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "style50.formatFile",
+          "when": "resourceExtname == .py || resourceExtname == .c",
+          "group": "navigation"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "python",
+        "extensions": [
+          ".py"
+        ]
+      },
+      {
+        "id": "c",
+        "extensions": [
+          ".c"
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "Style50 Configuration",
+      "properties": {
+        "style50.enableFormatOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable format on save using style50 for Python and C files."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.101.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "glob": "^10.4.5",
+    "typescript": "^5.8.3"
+  },
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SURYANARAYANNAN/style50"
+  },
+  "license": "MIT"
+}
