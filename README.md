@@ -1,3 +1,4 @@
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/surisurya19.style50?color=blue&label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=surisurya19.style50)
 # 🧩 style50
 
 [![style50 on VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/surisurya19.style50?label=style50)](https://marketplace.visualstudio.com/items?itemName=surisurya19.style50)
